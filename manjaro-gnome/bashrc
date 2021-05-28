@@ -145,7 +145,8 @@ export VISUAL=nvim
 export EDITOR=$VISUAL
 
 #Preceding space to exlude commands from bash history
-export HISTCONTROL=ignorespace
+export HSTCONTROL=ignorespace
 
 . /opt/asdf-vm/asdf.sh
 . /opt/asdf-vm/completions/asdf.bash
+I
