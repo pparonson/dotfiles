@@ -1,0 +1,20 @@
+-- print('hello from ~/config/nvim/lua/basic.lua')
+local Plug = vim.fn['plug#']
+
+vim.call('plug#begin', '~/.vim/plugged')
+
+-- Fuzzy search
+Plug 'junegunn/fzf.vim'
+
+-- text-editor
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+-- vim completion engine
+Plug('neoclide/coc.nvim', {branch = 'release'})
+
+vim.call('plug#end')
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+

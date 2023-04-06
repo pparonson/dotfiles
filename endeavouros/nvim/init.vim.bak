@@ -1,0 +1,58 @@
+lua require('basic')
+
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+" call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" Fuzzy search
+" Plug 'junegunn/fzf.vim'
+
+" text-editor
+" Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-surround'
+
+" git wrapper
+" Plug 'tpope/vim-fugitive'
+
+" vim completion engine
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Initialize plugin system
+" call plug#end()
+
+" relative numbers
+" set number relativenumber
+" set nu rnu
+
+" coc.nvim coc-prettier setup to use :Prettier command
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" https://github.com/neoclide/coc-snippets#examples -- mapping for tab
+" completion
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ CheckBackSpace() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! CheckBackSpace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+
+" set python provider for neovim
+let g:python_host_prog = '/home/brightbug/.asdf/shims/python3' 
+let g:python3_host_prog = '/home/brightbug/.asdf/shims/python3'
+" let g:python2_host_prog = '/home/brightbug/.asdf/shims/python2'
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
