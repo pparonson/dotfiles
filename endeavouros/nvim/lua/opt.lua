@@ -31,3 +31,14 @@ vim.cmd 'colorscheme material'
 vim.g.material_style = "Lighter"
 
 vim.g.mapleader = ' '
+
+local function create_augroup(group_name, definitions)
+  vim.cmd('augroup ' .. group_name .. ' autocmd! endaugroup')
+  for _, def in ipairs(definitions) do
+    vim.cmd('autocmd ' .. table.concat(def, ' '))
+  end
+end
+
+create_augroup('CursorShape', {
+  {'VimLeave,VimSuspend', '*', 'set guicursor=a:hor20-blinkon175'}
+})
