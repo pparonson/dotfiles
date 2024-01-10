@@ -27,8 +27,9 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 250
 -- vim.opt.colorcolumn = "100"
 
-vim.cmd 'colorscheme material'
-vim.g.material_style = "Lighter"
+-- vim.cmd 'colorscheme material'
+-- vim.g.material_style = "Darker"
+vim.cmd.colorscheme "catppuccin"
 
 vim.g.mapleader = ' '
 
@@ -42,4 +43,3 @@ end
 create_augroup('CursorShape', {
   {'VimLeave,VimSuspend', '*', 'set guicursor=a:hor20-blinkon175'}
 })
-

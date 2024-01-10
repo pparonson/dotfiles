@@ -19,9 +19,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 -- make sure this servers are installed
 -- see :help lsp-zero.ensure_installed()
 lsp.ensure_installed({
-  -- 'eslint',
-  'cssls',
-  'html',
   'lua_ls',
   'tsserver',
   'eslint',
@@ -59,3 +56,4 @@ lsp.setup()
 vim.diagnostic.config({
   virtual_text = true,
 })
+

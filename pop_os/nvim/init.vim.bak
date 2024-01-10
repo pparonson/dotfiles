@@ -22,14 +22,16 @@ call plug#end()
 
 " relative numbers
 set number relativenumber
-set nu rnu
+" set nu rnu
 
 " coc.nvim coc-prettier setup to use :Prettier command
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" set python provider for neovim
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-

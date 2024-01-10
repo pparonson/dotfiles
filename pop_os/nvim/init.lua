@@ -1,8 +1,10 @@
 -- print("init.lua")
 
+require("basic")
 require("plugins")
 require("lsp")
-require("basic")
 require("theme")
 require("opt")
 require("remap")
+
+

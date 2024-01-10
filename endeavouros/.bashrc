@@ -10,8 +10,8 @@
 _set_liveuser_PS1() {
     # PS1='[\u@\h \W]\$ '
     # PS1="\[\e[0;93m\]${USER//b/₿}\[\e[m\]\$ "
-    # PS1="\[\e[0;93m\]₿\[\e[m\] "
-    PS1="\[\e[0;93m\]>\[\e[m\]"
+    # PS1="\[\e[0;93m\]₿\[\e[m\]"
+    PS1="\[\e[0;32m\]>\[\e[m\]"
     if [ "$(whoami)" = "liveuser" ] ; then
         local iso_version="$(grep ^VERSION= /usr/lib/endeavouros-release 2>/dev/null | cut -d '=' -f 2)"
         if [ -n "$iso_version" ] ; then
@@ -98,3 +98,4 @@ export HISTFILESIZE=15000
 export VISUAL=nvim
 export EDITOR=$VISUAL
 export BROWSER=chromium
+alias nvimai="/home/brightbug/.set_openai_key.sh"

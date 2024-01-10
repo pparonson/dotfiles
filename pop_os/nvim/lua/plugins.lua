@@ -6,8 +6,7 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  -- or                            , branch = '0.1.x',
+	  'nvim-telescope/telescope.nvim',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {
@@ -24,9 +23,9 @@ return require('packer').startup(function()
   }
   use 'tpope/vim-surround'
   use {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v1.x',
-      requires = {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    requires = {
 	    -- LSP Support
             {'neovim/nvim-lspconfig'},             -- Required
             {'williamboman/mason.nvim'},           -- Optional
@@ -43,21 +42,9 @@ return require('packer').startup(function()
             -- Snippets
             {'L3MON4D3/LuaSnip'},             -- Required
             {'rafamadriz/friendly-snippets'}, -- Optional
-      }
-  }
-  use({
-      "jackMort/ChatGPT.nvim",
-      config = function()
-          require("chatgpt").setup()
-          -- require("chatgpt").setup({
-             -- api_key_cmd = "keepassxc-cli show -a Password /home/brightbug/Sync/Backups/KeepassXC/passwords_api.kdbx OpenAPI_ChatGPT_API --quiet"
-          -- })
-      end,
-      requires = {
-          "MunifTanjim/nui.nvim",
-          "nvim-lua/plenary.nvim",
-          "nvim-telescope/telescope.nvim"
-      }
-  })
-  use 'marko-cerovac/material.nvim'
+        }
+    }
+  -- use 'marko-cerovac/material.nvim'
+  use { "catppuccin/nvim", as = "catppuccin" }
 end)
+
